@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공공재 로그인</title>
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="login-container">
+    <img src="/images/reallogo 1.png" alt="공공재 로고" class="logo-img" id="mainLogo">
+
+    <form class="login-form" method="POST" action="/login">
+      <label for="email">이메일</label>
+      <input type="email" name="email" id="email" placeholder="이메일을 입력하세요" required>
+
+      <label for="password">비밀번호</label>
+      <div class="password-field">
+        <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요" required>
+        <i class="fa-regular fa-eye-slash toggle-password" onclick="togglePassword()"></i>
+      </div>
+
+      <button type="submit" class="login-btn">로그인 하기</button>
+    </form>
+
+    <p class="signup-text">아직 회원이 아니신가요? <a href="/signup">회원가입</a></p>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      const icon = document.querySelector(".toggle-password");
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const mainLogo = document.getElementById("mainLogo");
+      if (mainLogo) {
+        mainLogo.addEventListener("click", () => {
+          window.location.href = "/"; // 메인페이지로 이동
+        });
+      }
+    });
+  </script>
+</body>
+</html>

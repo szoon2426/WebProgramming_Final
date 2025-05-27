@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f7fa;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.logo-img {
+  width: 200px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.field-with-button {
+  display: flex;
+  align-items: center; /* 중요: 버튼과 input 높이 맞춤 */
+  gap: 10px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.field-with-button input {
+  flex: 1; /* 남은 공간을 input이 차지 */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+.check-btn {
+  padding: 10px 16px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-bottom:12px;
+}
+
+.password-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 70px; /* 아이콘 공간 확보 */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.password-field i {
+  position: absolute;
+  top: 37%;
+  left: 370px;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+
+
+.submit-btn {
+  display: block;
+  margin: 20px auto 0 50px;  /* ✅ 가운데 정렬 핵심 */
+  padding: 14px 40px;
+  background-color: #2986c8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 80%; /* ✅ 버튼 크기만큼만 너비 */
+}
+
