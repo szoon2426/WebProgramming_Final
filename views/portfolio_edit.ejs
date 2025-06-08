@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공공재 메인페이지</title>
+  <!-- ✅ CSS 경로 수정 -->
+  <!-- <link rel="stylesheet" href="/css/main(LogX).css"> -->
+  <link rel="stylesheet" href="/css/portfolio_edit.css">
+  <!-- ✅ JS 경로 수정 -->
+  <script defer src="/js/main(LogX).js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo-area">
+        <!-- ✅ 이미지 경로 수정 -->
+        <img src="/images/reallogo 1.png" alt="공공재 로고" class="logo" id="mainLogo">
+      </div>
+      <button class="btn login" id="loginBtn">로그인</button>
+      <button class="btn signup" id="signUpBtn">회원가입</button>
+    </aside>
+
+    <main class="main-content">
+      <div class="portfolio-header">
+        <div class="inner-container">
+          <h1>Portfolio</h1>
+        </div>
+      </div>
+      <div class = "portfolio-body">
+        <div class="user-info">
+          <div class="user-text">
+            <input class="name-input" type="text" placeholder="이름을 입력하세요" value="<%= name ? name : '' %>"/>
+            <div class="about-box">
+              <p class="about-title">about me</p>
+              <textarea class="about-textarea" placeholder="본인을 소개해주세요!"><%= about ? about : '' %></textarea></textarea>
+            </div>            
+          </div>
+        
+          <div class="user-photo-skill">
+            <form id="profileForm" enctype="multipart/form-data">
+              <div class="photo-box" onclick="document.getElementById('profileInput').click()">
+                <% if (profileImage) { %>
+                <img id="profilePreview" src="/uploads/<%= profileImage %>" alt="프로필 이미지"/>
+                <% } else { %>
+                  <img
+                    id="profilePreview"
+                    src=""
+                    alt="프로필 이미지"
+                    style="display: none;"
+                  />
+                  <div id="photoPlaceholder" class="photo-placeholder">+</div>
+                <% } %>
+                <input type="file" id="profileInput" name="profileImage" accept="image/*" style="display: none;" />
+              </div>
+            </form>
+          
+            <div class="skills-section">
+              <div class="skills" id="skillList">
+                <% if (skills && skills.length > 0) { %>
+                  <% skills.forEach(skill => { %>
+                    <div
+                      class="skill-button"
+                      style="background-color: <%= skill.color %>;"
+                    >
+                      <input
+                        type="text"
+                        class="skill-input"
+                        value="<%= skill.name %>"
+                      />
+                      <input
+                        type="color"
+                        class="color-picker"
+                        value="<%= skill.color %>"
+                      />
+                    </div>
+                  <% }) %>
+                <% } %>
+              </div>
+              <button class="add-skill-button" onclick="addSkill()">+</button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <section class="study-record">
+          <h3>공부 기록</h3>
+          <p>현재 0일</p>
+        
+          <div class="study-graph-area">
+            <!-- 좌측 요일 -->
+            <div class="weekdays">
+              <div>SUN</div>
+              <div>MON</div>
+              <div>TUE</div>
+              <div>WED</div>
+              <div>THU</div>
+              <div>FRI</div>
+              <div>SAT</div>
+            </div>
+        
+            <!-- 우측 달력 스크롤 영역 -->
+            <div class="calendar-scroll">
+              <div class="calendar-track">
+                <!-- 주 단위 열 -->
+                <div class="calendar-column">
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                </div>
+        
+                <div class="calendar-column">
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                  <div class="day-cell"></div>
+                </div>
+        
+                <!-- 추가 주 -->
+              </div>
+            </div>
+        
+            <!-- 우측 원형 요약 -->
+            <div class="summary-circle">
+              <div class="circle-placeholder">75%</div>
+            </div>
+          </div>
+        </section>
+        
+      
+        <section class="project-add-section">      
+          <!-- 추가될 카드들이 들어가는 영역 -->
+          <div id="project-card-container">
+            <% if (projects && projects.length > 0) { %>
+              <% projects.forEach(project => { %>
+                <div class="project-added-card show">
+                  <div class="project-label">
+                    <input type="text" class="project-title-input" value="<%= project.title %>" />
+                    <p class="project-delete">X</p>
+                  </div>
+                  <hr class="project-divider" />
+                  <div class="project-detail">
+                    <textarea class="project-description"><%= project.description %></textarea>
+                  </div>
+                </div>
+              <% }) %>
+            <% } %>
+          </div>
+        
+          <!-- + 카드 -->
+          <div class="project-add-button" onclick="addProjectCard()">
+            <div class="project-label">새 프로젝트 추가</div>
+            <hr class="project-divider" />
+            <div class="project-add-card">
+              <div class="plus-icon">+</div>
+            </div>
+          </div>                    
+        </section>
+        
+        <!-- 수정 완료 버튼 -->
+        <div style="text-align: right; margin: 0 0;">
+          <button class="btn save" id="saveBtn">수정 완료</button>
+        </div>
+        
+      </div>
+      
+    </main>
+  </div>
+  <script src="/js/portfolio_edit.js"></script>
+</body>
+</html>
