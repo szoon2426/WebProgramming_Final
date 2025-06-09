@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공공재 메인페이지</title>
+  <!-- ✅ CSS 경로 수정 -->
+  <link rel="stylesheet" href="/css/main(LogX).css">
+  <!-- ✅ JS 경로 수정 -->
+  <script defer src="/js/main(LogX).js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo-area">
+        <!-- ✅ 이미지 경로 수정 -->
+        <img src="/images/reallogo 1.png" alt="공공재 로고" class="logo" id="mainLogo">
+      </div>
+      <button class="btn login" id="loginBtn">로그인</button>
+      <button class="btn signup" id="signUpBtn">회원가입</button>
+    </aside>
+
+    <main class="main-content">
+      <div class="intro-area">
+        <div class="intro-text">
+          <h1>같이 도전하는 공모전,<br>공공재와 함께 시작하세요</h1>
+          <p>팀원 모집, 스터디 구성, 공모전 정보까지.<br>공모전을 시작하는 가장 쉬운 방법, 공공재에서 함께하세요.</p>
+        </div>
+        <div class="main-logo">
+          <!-- ✅ 이미지 경로 수정 -->
+          <img src="/images/reallogo 1.png" alt="공공재 메인 로고">
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn main-btn" id="contestBtn">공모전 참여하기</button>
+        <button class="btn main-btn" id="studyBtn">스터디 참여하기</button>
+      </div>
+    </main>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const loginBtn = document.getElementById("loginBtn");
+  const signUpBtn = document.getElementById("signUpBtn");
+  const contestBtn = document.getElementById("contestBtn");
+  const studyBtn = document.getElementById("studyBtn");
+  const mainLogo = document.getElementById("mainLogo");
+
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => {
+      window.location.href = "/login";
+    });
+  }
+
+  if (signUpBtn) {
+    signUpBtn.addEventListener("click", () => {
+      window.location.href = "/signUp";
+    });
+  }
+
+  if (contestBtn) {
+    contestBtn.addEventListener("click", () => {
+      window.location.href = "/login";
+    });
+  }
+
+  if (studyBtn) {
+    studyBtn.addEventListener("click", () => {
+      window.location.href = "/login";
+    });
+  }
+
+  if (mainLogo) {
+    mainLogo.addEventListener("click", () => {
+      window.location.href = "/";
+    });
+  }
+});
+  </script>
+</body>
+</html>

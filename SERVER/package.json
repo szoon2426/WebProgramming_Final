@@ -1,0 +1,35 @@
+{
+  "name": "ggj_v1",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "fastapi": "^0.0.8",
+    "mongo": "^0.1.0",
+    "mongodb": "^6.17.0",
+    "multer": "^2.0.1",
+    "mysql2": "^3.14.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinsoru1464/WebProgramming_Final.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinsoru1464/WebProgramming_Final/issues"
+  },
+  "homepage": "https://github.com/jinsoru1464/WebProgramming_Final#readme",
+  "description": ""
+}
